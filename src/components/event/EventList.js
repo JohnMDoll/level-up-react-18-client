@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom"
 import React, { useEffect, useState } from "react"
 import { getEvents } from "../../managers/EventManager.js"
 
 export const EventList = (props) => {
+    const navigate = useNavigate()
     const [ events, setEvents ] = useState([])
 
     useEffect(() => {
@@ -12,7 +14,7 @@ export const EventList = (props) => {
         <article className="events">
             {
                 events.map(event => {
-                    return <section key={`event--${event?.id}`} className="event">
+                    return <section onClick={navigate("/editevent")} key={`event--${event?.id}`} className="event">
                         <div className="event__title">{event?.game?.name} with {event?.organizer?.user?.first_name}</div>
                         <div className="event__date">On {event?.date} </div>
                         <div className="event__type">Type of Game: {event?.game?.game_type.label}</div>

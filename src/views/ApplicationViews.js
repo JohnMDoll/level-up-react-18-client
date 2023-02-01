@@ -3,7 +3,8 @@ import { Login } from "../components/auth/Login"
 import { Register } from "../components/auth/Register"
 import { Authorized } from "./Authorized"
 import { GameList } from "../components/game/GameList"
-import { EventList } from "../components/game/EventList"
+import { EventList } from "../components/event/EventList"
+import { UpdateGame } from "../components/game/UpdateGame"
 
 
 export const ApplicationViews = () => {
@@ -13,6 +14,7 @@ export const ApplicationViews = () => {
             <Route path="/register" element={<Register />} />
             <Route element={<Authorized />}>
                 <Route path="/" element={<GameList />} />
+                <Route path="/editgame" element={<UpdateGame />} />
                 <Route path="/events" element={<EventList />} />
             </Route>
         </Routes>
