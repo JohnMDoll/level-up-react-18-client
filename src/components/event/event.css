@@ -14,3 +14,17 @@ fieldset input, fieldset select {
     margin-bottom: 10px;
     border: 1px solid gray;
 }
+
+#leave {
+    background-color: rgb(172, 52, 52);
+    border-radius: 15px;
+}
+#join {
+    background-color: green;
+    border-radius: 15px;
+}
+
+#delete {
+    background-color: rgb(151, 30, 181);
+    border-radius: 15px;
+}

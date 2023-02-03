@@ -25,7 +25,7 @@ export const EventList = (props) => {
                         <div className="event__date">On {event?.date} </div>
                         <div className="event__description">{event?.description} </div>
                         <div className="event__type">Type of Game: {event?.game?.game_type.label}</div>
-                        <button
+                        <button id="delete"
                             onClick={evt => {
                                 evt.stopPropagation()
                                 deleteEvent(event.id)
@@ -42,7 +42,7 @@ export const EventList = (props) => {
                                         .then(data => setEvents(data))
                                 }}>Leave</button>
                                 :
-                                <button className="btn btn-primary" id="leave" onClick={evt => {
+                                <button className="btn btn-primary" id="join" onClick={evt => {
                                     evt.stopPropagation()
                                     evt.preventDefault()
                                     joinEvent(event.id)
